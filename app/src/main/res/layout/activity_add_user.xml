@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddUserActivity">
+
+    <EditText
+        android:id="@+id/editFirstName"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Etunimi"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editLastName"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Sukunimi"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFirstName" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Sähköpostiosoite"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLastName" />
+
+    <RadioGroup
+        android:id="@+id/rgStudyField"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail">
+
+        <RadioButton
+            android:id="@+id/rbEnTe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Energiatekniikka" />
+
+        <RadioButton
+            android:id="@+id/rbLaTe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Laskennallinen tekniikka" />
+
+        <RadioButton
+            android:id="@+id/rbSäTe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sähkötekniikka" />
+
+        <RadioButton
+            android:id="@+id/rbTiTe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tietotekniikka" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAddUser"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Lisää käyttäjä"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgStudyField" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
