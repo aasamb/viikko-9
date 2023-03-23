@@ -6,11 +6,14 @@ public class User {
     private String email;
     private String degreeProgram;
 
-    public User(String firstName, String lastName, String email, String degreeProgram)  {
+    private int image;
+
+    public User(String firstName, String lastName, String email, String degreeProgram, int image)  {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.degreeProgram = degreeProgram;
+        this.image = image;
     }
 
     public String getFirstName() {
@@ -27,5 +30,9 @@ public class User {
 
     public String getDegreeProgram() {
         return degreeProgram;
+    }
+
+    public int getImage() {
+        return image;
     }
 }
