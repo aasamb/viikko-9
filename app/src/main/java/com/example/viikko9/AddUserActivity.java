@@ -36,24 +36,20 @@ public class AddUserActivity extends AppCompatActivity {
     }
 
     public void addUser(View view) {
-        RadioGroup rgStudyField = findViewById(R.id.rgStudyField);
-        RadioGroup rgImageSelect = findViewById(R.id.rgImageSelect);
-
         int image = 0;
         String degreeProgram = "";
-        boolean allFieldsFilled;
-
-        System.out.println("Metodissa ollaan!");
+        RadioGroup rgStudyField = findViewById(R.id.rgStudyField);
+        RadioGroup rgImageSelect = findViewById(R.id.rgImageSelect);
+        //System.out.println("Metodissa ollaan!");
 
         //try {
+        boolean allFieldsFilled;
         boolean emptyString = isEmptyStrings();
         allFieldsFilled = !emptyString;
         //System.out.println("'emptyString' ennen testiä: " + String.valueOf(emptyString));
 
-        System.out.println("'emptyString' testin jälkeen: " + emptyString);
-        System.out.println("'noEmptyFields' testin jälkeen: " + allFieldsFilled);
-
-        //System.out.println("if-lausekkeessa ollaan arvolla: " + String.valueOf(emptyString));
+        //System.out.println("'emptyString' testin jälkeen: " + emptyString);
+        //System.out.println("'noEmptyFields' testin jälkeen: " + allFieldsFilled);
 
         switch (rgStudyField.getCheckedRadioButtonId()) {
             case R.id.rbEnTe:
@@ -69,8 +65,8 @@ public class AddUserActivity extends AppCompatActivity {
                 degreeProgram = "Tietotekniikka";
                 break;
             default:
-                Toast.makeText(this, "Valitse ala.", Toast.LENGTH_LONG).show();
-                System.out.println("Valitse ala.");
+                Toast.makeText(this, "Valitse ensin ala.", Toast.LENGTH_LONG).show();
+                System.out.println("Valitse ensin ala.");
                 allFieldsFilled = false;
         }
 
@@ -91,8 +87,8 @@ public class AddUserActivity extends AppCompatActivity {
                 image = 0;
                 break;
             default:
-                Toast.makeText(this, "Valitse kuva.", Toast.LENGTH_LONG).show();
-                System.out.println("Valitse kuva.");
+                Toast.makeText(this, "Valitse ensin kuva.", Toast.LENGTH_LONG).show();
+                System.out.println("Valitse ensin kuva.");
                 allFieldsFilled = false;
                 break;
         }
@@ -103,12 +99,12 @@ public class AddUserActivity extends AppCompatActivity {
             String lastName = lastNameInput.getText().toString();
             String email = emailInput.getText().toString();
             userStorage.addUser(new User(firstName, lastName, email, degreeProgram, image));
-            //System.out.println("Käyttäjä tallennettu.");
+            System.out.println("Käyttäjä tallennettu.");
 
         } else {
             if (emptyString) {
-                Toast.makeText(this, "Täytä tekstikentät.", Toast.LENGTH_LONG).show();
-                System.out.println("Täytä tekstikentät.");
+                Toast.makeText(this, "Täytä kaikki tekstikentät.", Toast.LENGTH_LONG).show();
+                System.out.println("Täytä kaikki tekstikentät.");
             }
             Toast.makeText(this, "Käyttäjää ei tallennettu.", Toast.LENGTH_LONG).show();
             System.out.println("Käyttäjää ei tallennettu.");
@@ -125,7 +121,7 @@ public class AddUserActivity extends AppCompatActivity {
         boolean emptyString = false;
         for (EditText textField : textFields) {
             emptyString = textField.getText().toString().isEmpty();
-            System.out.println("Yksittäinen 'emptyString': " + String.valueOf(emptyString));
+            //System.out.println("Yksittäinen 'emptyString': " + String.valueOf(emptyString));
             if (emptyString) {
                 break;
             }
